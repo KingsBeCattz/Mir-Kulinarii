@@ -1,11 +1,27 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BBQ from "../assets/Costillas-de-cerdo-BBQ-scaled.jpg";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Card from "../components/Card.astro";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Welcome />
+	<div class="content">
+		<Hero 
+			title="Bienvenido a Mir Kulinarii"
+			slogan="La cocina de más alta calidad en todo México"
+			image={{
+				src: BBQ,
+				alt: "Costilla BBQ"
+			}}
+		/>
+		
+		<Card title="Qué ofrecemos?">
+			En Mir Kulinarii le ofrecemos una variedad de cortes de carne de alta calidad, preparados con esmero y dedicación. Desde jugosos cortes de res, suculentas costillas de cerdo hasta ensaladas frescas, cada plato está diseñado para deleitar su paladar. Explore nuestro menú y descubra la pasión por la cocina que nos distingue.
+		</Card>
+	</div>
 </Layout>
+
+<style>
+</style>

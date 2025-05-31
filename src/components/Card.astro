@@ -1,0 +1,40 @@
+---
+interface Props {
+	title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="card">
+  {title && <h2 class="montserrat-600">{title}</h2>}
+  <div class="montserrat-300"><slot /></div>
+</div>
+
+<style>
+  .card {
+		width: clamp(300px, 70dvw, 1200px);
+		background-color: var(--background-primary);
+		padding: 2rem;
+		margin: 1rem auto 0 auto;
+		border-radius: 0.5rem;
+		font-size: larger;
+	}
+
+  .card h2 {
+    margin: 0 0 1rem 0;
+  }
+
+  .card h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .card .montserrat-300 {
+    font-size: 1.2rem;
+  }
+</style>

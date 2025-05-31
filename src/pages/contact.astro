@@ -1,0 +1,134 @@
+---
+import Clericot from "../assets/Clericot.png";
+
+import Menu from "../components/Menu.astro";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+
+function handleSubmit() {
+	alert("Correo Enviado");
+}
+---
+
+<Layout subtitle="Contacto">
+  <div class="content">
+    <Hero
+      title="Contacta con nosotros"
+      slogan="Contacta con nosotros para más información"
+      image={{
+        src: Clericot,
+        alt: "Clericot",
+      }}
+    />
+    <Card title="Envianos un correo">
+      <form class="email-form" onsubmit="handleSubmit()">
+        <div class="field">
+          <div class="block">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required><br><br>
+          </div>
+        
+          <div class="block">
+            <label for="correo">Correo Electrónico:</label><br>
+            <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" required><br><br>
+          </div>
+        
+          <div class="block">
+            <label for="telefono">Teléfono:</label><br>
+            <input type="tel" id="telefono" name="telefono" placeholder="+52 686 123 4567"><br><br>
+          </div>
+        </div>
+        
+        <div class="field">
+          <div class="block">
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe aquí tu duda o comentario" required></textarea><br><br>
+          </div>
+        
+          <div class="block">
+            <button type="submit">Enviar</button>
+          </div>
+        </div>
+      </form>
+    </Card>
+    <Card title="Información de contacto">
+      <p>Teléfono: <a href="tel:+52 686 123 4567">+52 686 123 4567</a></p>
+      <p>Correo Electrónico: <a href="mailto:contacto@mirkulinarii.com">contacto@mirkulinarii.com</a></p>
+    </Card>
+    <Card title="Ubicación y Horario">
+      <p>Dirección: Av. Reforma 508, Colonia Centro, Mexicali, BC, 21000</p>
+      <ul>
+        <li>Lunes a Sábado: 13:00 – 23:00</li>
+        <li>Domingo: 13:00 – 21:00</li>
+      </ul>
+    </Card>
+    <Card title="Redes Sociales">
+      <p>Síguenos en nuestras redes sociales para estar al tanto de nuestras novedades:</p>
+      <ul>
+        <li><a href="https://www.facebook.com/mirkulinarii" target="_blank">Facebook</a></li>
+        <li><a href="https://www.instagram.com/mirkulinarii" target="_blank">Instagram</a></li>
+        <li><a href="https://www.twitter.com/mirkulinarii" target="_blank">Twitter</a></li>
+        <li><a href="tiktok.com/@mirkulinarii" target="_blank">TikTok</a></li>
+      </ul>
+    </Card>
+  </div>
+</Layout>
+
+<style>
+  .email-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    height: 100%
+  }
+
+  .field .block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .field .block label {
+    font-weight: bold;
+  }
+
+  .field .block input, .field .block textarea {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    width: 100%;
+    background-color: var(--background-primary);
+    border: 1px solid var(--background-secondary);
+  }
+
+  .field .block textarea {
+    height: 100%;
+    resize: none;
+  }
+
+  .field .block button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    opacity: 0.8;
+    border: 2px solid var(--background-secondary);
+  }
+
+  .field .block button:hover {
+    opacity: 1;
+  }
+  .field .block input::placeholder, .field .block textarea::placeholder {
+    /* color: var(--placeholder-color); */
+  }
+  .field .block input:focus, .field .block textarea:focus {
+    border-color: #c0c0c0;
+  }
+</style>

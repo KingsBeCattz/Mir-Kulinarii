@@ -1,0 +1,192 @@
+---
+import Chistorra from "../assets/Chistorra.png";
+
+import Menu from "../components/Menu.astro";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout subtitle="Menú">
+	<div class="content">
+		<Hero 
+			title="Conoce nuestro menú"
+			slogan="Nuestro exquisito menú"
+			image={{
+				src: Chistorra,
+				alt: "Chistorra"
+			}}
+		/>
+		<Menu items={
+[
+  {
+    "subtitle": "Cortes de Res, Pollo, Pavo, Cordero, Mariscos & Cerdo",
+    "items": [
+      {
+        "name": "Aguja Norteña",
+        "description": "Corte de res jugoso a la parrilla, sazonado con especias mexicanas, acompañado de cebollitas asadas y frijoles charros.",
+        "price": 280
+      },
+      {
+        "name": "Asado de tira",
+        "description": "Costilla de res en tiras, cocinada lentamente y cubierta con salsa BBQ casera, servida con papas fritas rústicas.",
+        "price": 380
+      },
+      {
+        "name": "Camarones",
+        "description": "Camarones al ajillo salteados en mantequilla de ajo y chile, servidos con arroz y ensalada de la casa.",
+        "price": 350
+      },
+      {
+        "name": "Chistorra",
+        "description": "Chistorra fresca a la parrilla, servida con tortillas hechas a mano, salsa verde y cebolla encurtida.",
+        "price": 240
+      },
+      {
+        "name": "Pierna de cordero",
+        "description": "Pierna de cordero marinada en hierbas aromáticas, asada al carbón y acompañada de papas al romero.",
+        "price": 360
+      },
+      {
+        "name": "Chorizo brasileño",
+        "description": "Chorizo estilo brasileño a la parrilla, servido con chimichurri y guarnición de vegetales asados.",
+        "price": 260
+      },
+      {
+        "name": "Churrasco",
+        "description": "Corte de res tipo churrasco, sazonado con ajo y perejil, asado al punto deseado, acompañado de plátano macho frito.",
+        "price": 300
+      },
+      {
+        "name": "Costilla BBQ",
+        "description": "Costilla de res en costra de especias, bañada en salsa BBQ ahumada, servida con elote a la parrilla.",
+        "price": 380
+      },
+      {
+        "name": "Costilla de Res",
+        "description": "Costillas de res cocinadas a fuego lento en adobo de chile ancho, acompañadas de puré de papa.",
+        "price": 380
+      },
+      {
+        "name": "Filete mignon",
+        "description": "Filete mignon envuelto en tocino, sellado al carbón y servido con salsa de champiñones y papas a la francesa.",
+        "price": 325
+      },
+      {
+        "name": "Negritos con tocino",
+        "description": "Medallones de res envueltos en tocino, asados al carbón y acompañados de verduras salteadas.",
+        "price": 340
+      },
+      {
+        "name": "Picaña",
+        "description": "Picaña en tiras finas, marinada con sal de mar y hierbas, asada a la perfección, acompañada de arroz blanco y frijoles charros.",
+        "price": 450
+      },
+      {
+        "name": "Arrachera",
+        "description": "Arrachera marinada con jugo de naranja agria y especias, asada al carbón, acompañada de cebollitas cambray y nopales.",
+        "price": 319
+      },
+      {
+        "name": "Pechuga de pollo con limón",
+        "description": "Pechuga de pollo marinada en jugo de limón, asada al carbón y servida con ensalada fresca y tortillas de maíz.",
+        "price": 249
+      },
+      {
+        "name": "Pulpo",
+        "description": "Pulpo al grill sazonado con aceite de oliva y ajo, servido con papas asadas y pimientos al ajillo.",
+        "price": 557
+      },
+      {
+        "name": "Tomahawk",
+        "description": "Corte Tomahawk de res (aprox. 300 g) con hueso, sazonado con sal gruesa y pimienta, asado a la parrilla, acompañado de puré de camote.",
+        "price": 764.50
+      },
+      {
+        "name": "Sirloin",
+        "description": "Sirloin de res a las brasas, sazonado con mix de especias, servido con ensalada de espinacas y aderezo de mostaza.",
+        "price": 300
+      },
+      {
+        "name": "Tripa de leche",
+        "description": "Tripa de res suave guisada en salsa de tomate y chile pasilla, acompañada de arroz rojo y frijoles refritos.",
+        "price": 260
+      },
+      {
+        "name": "Trompo al pastor",
+        "description": "Trompo de carne de cerdo adobada, servido con piña, cilantro, cebolla y tortillas de maíz.",
+        "price": 150
+      },
+      {
+        "name": "Filete al limón",
+        "description": "Filete de res a la plancha con salsa de limón y perejil, acompañado de puré de papas cremoso.",
+        "price": 345
+      },
+      {
+        "name": "Filete a la mostaza",
+        "description": "Filete de res cubierto con salsa de mostaza Dijon, acompañado de vegetales al vapor y arroz blanco.",
+        "price": 345
+      },
+      {
+        "name": "Sirloin con ajo",
+        "description": "Sirloin de res cortado en tiras, salteado con ajo y mantequilla, servido con papas gajo y ensalada verde.",
+        "price": 310
+      }
+    ]
+  },
+  {
+    "subtitle": "Ensaladas",
+    "items": [
+      {
+        "name": "Ensalada César",
+        "description": "Lechuga romana, aderezo cremoso César, crutones y queso parmesano rallado.",
+        "price": 150
+      },
+      {
+        "name": "Ensalada de Nopales",
+        "description": "Nopales frescos mezclados con tomate, cebolla, cilantro y aderezo especial de la casa.",
+        "price": 130
+      },
+      {
+        "name": "Ensalada Mexicana",
+        "description": "Mezcla de lechugas con jitomate, cilantro, queso fresco y aderezo de limón.",
+        "price": 140
+      },
+      {
+        "name": "Ensalada de la Casa",
+        "description": "Variedad de lechugas, aguacate en cubos y vinagreta de balsámico.",
+        "price": 160
+      }
+    ]
+  },
+  {
+    "subtitle": "Bebidas y Cócteles",
+    "items": [
+      {
+        "name": "Caipirinha típica de Brasil",
+        "description": "Coctel preparado con cachaça, azúcar y limón, servido con hielo picado.",
+        "price": 120
+      },
+      {
+        "name": "Clericot",
+        "description": "Mezcla de vino blanco con frutas frescas (manzana, pera, durazno) y un toque de licor de naranja.",
+        "price": 110
+      },
+      {
+        "name": "Sunrise de frutas",
+        "description": "Coctel sin alcohol de jugos naturales (naranja, fresa y limón) en capas, servido con frutas frescas.",
+        "price": 85
+      },
+      {
+        "name": "Ginebra con frutos rojos",
+        "description": "Ginebra premium macerada con frutos rojos y hierbabuena, servida con tónica y hielo.",
+        "price": 130
+      }
+    ]
+  }
+]
+		}/>
+	</div>
+</Layout>
+
+<style>
+</style>

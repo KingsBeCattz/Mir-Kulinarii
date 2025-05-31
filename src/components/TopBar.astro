@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets";
+import Mir_Kulinarii from "../assets/Mir-Kulinarii.png";
+import PagAnchor from "./PagAnchor.astro";
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+const pages = [
+	{ title: "Inicio", href: "/" },
+	{ title: "Quienes somos", href: "/about" },
+	{ title: "Menu", href: "/menu" },
+	{ title: "Contactanos", href: "/contact" },
+];
+---
+
+<header class="top-bar">
+  <div class="container">
+    <h1 class="logo">
+      <a href="/">
+        <Image src={Mir_Kulinarii} alt="Logo" width="50" height="50" />
+        <span>{title}</span>
+      </a>
+    </h1>
+    <nav class="nav-links">
+      <ul>
+        {pages.map(page => (
+          <li>
+            <PagAnchor title={page.title} href={page.href} />
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style scoped>
+  .top-bar {
+    background-color: var(--background-secondary);
+    padding: .5rem 1rem;
+    height: 65px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .top-bar * {
+    margin: 0;
+  }
+
+  .container {
+    background-color: var(--background-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo a {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo a img {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    height: 45px;
+    width: 45px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .logo a span {
+    font-size: 2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: normal;
+  }
+
+  .nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  .nav-links li {
+    margin: 0 1rem;
+  }
+</style>

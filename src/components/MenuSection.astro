@@ -1,0 +1,58 @@
+---
+import MenuItem from "./MenuItem.astro";
+
+interface Props {
+	subtitle: string;
+	items: {
+		name: string;
+		description: string;
+		price: number;
+	}[];
+}
+
+const { subtitle, items } = Astro.props as Props;
+---
+
+<section class="menu-section">
+  <h2 class="menu-subtitle">{subtitle}</h2>
+  <ul class="menu-list">
+    {items.map((item) => (
+      <MenuItem 
+        name={item.name}
+        description={item.description}
+        price={item.price}
+      />
+    ))}
+  </ul>
+</section>
+
+<style>
+  .menu-section {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1rem;
+  }
+
+  .menu-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .menu-subtitle::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu-item {
+    margin-bottom: 1rem;
+  }
+</style>

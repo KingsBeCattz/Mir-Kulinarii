@@ -1,22 +1,71 @@
+---
+import TopBar from "../components/TopBar.astro";
+
+const title = "Mir Kulinarii";
+
+interface Props {
+	subtitle?: string;
+}
+
+const { subtitle } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{subtitle && `${subtitle} | `}{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600" rel="stylesheet">
 	</head>
 	<body>
+		<TopBar title={title}/>
 		<slot />
 	</body>
 </html>
 
-<style>
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900');
+
+	:root {
+		--background-color: #1f1f1f;
+		--background-primary: #1b1b1b;
+		--background-secondary: #282828;
+	}
+
+	.montserrat-300 {
+  	font-family: "Montserrat", sans-serif;
+  	font-optical-sizing: auto;
+ 	 	font-weight: 300;
+  	font-style: normal;
+	}
+	.montserrat-450 {
+  	font-family: "Montserrat", sans-serif;
+  	font-optical-sizing: auto;
+ 	 	font-weight: 450;
+  	font-style: normal;
+	}
+	.montserrat-600 {
+  	font-family: "Montserrat", sans-serif;
+  	font-optical-sizing: auto;
+ 	 	font-weight: 600;
+  	font-style: normal;
+	}
+
 	html,
 	body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		background-color: var(--background-color);
+	}
+
+	* {
+		box-sizing: border-box;
+    color: white;
 	}
 </style>

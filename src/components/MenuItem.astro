@@ -1,0 +1,42 @@
+---
+interface MenuItem {
+	name: string;
+	description: string;
+	price?: number;
+}
+
+const { name, description, price } = Astro.props;
+---
+
+<li class="menu-item">
+  <div class="item-header">
+    <span class="item-name">{name}</span>
+    {(price || price > 0) && <span class="item-price">${price.toFixed(2)}</span>}
+
+  </div>
+  <p class="item-description">{description}</p>
+</li>
+
+<style>
+  .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .item-name {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .item-price {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #494949;
+  }
+
+  .item-description {
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+</style>

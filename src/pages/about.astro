@@ -1,0 +1,53 @@
+---
+import Asado from "../assets/Asado-de-tira-con-Chimichurri.png";
+
+import Card from "../components/Card.astro";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout subtitle="Quienes somos">
+	<div class="content">
+		<Hero 
+			title="Conoce a Mir Kulinarii"
+			slogan="Todo sobre nuestra pasión por la cocina"
+			image={{
+				src: Asado,
+				alt: "Asado de Tira"
+			}}
+		/>
+		<Card title="Nuestra Historia">
+			Mir Kulinarii —que en ruso significa “El mundo de la gastronomía”— nace de una pasión profunda por la cocina bien hecha y los sabores que dejan huella. Fundado por amantes de la buena carne y el arte culinario, nuestro restaurante es un homenaje a la tradición y a la excelencia gastronómica.
+
+Desde el primer día, nos propusimos crear un espacio donde cada visita se convierta en una experiencia memorable. Nos especializamos en ofrecer una variedad de cortes de carne de alta calidad, seleccionados cuidadosamente y preparados con dedicación. Ya sea un jugoso corte de res, unas costillas de cerdo cocinadas a la perfección, o una ensalada fresca y vibrante, cada plato es una expresión de nuestra filosofía: respeto por el producto, técnica impecable y pasión en cada detalle.
+
+En Mir Kulinarii, no solo cocinamos, creamos momentos. Nuestro equipo de chefs trabaja con esmero para ofrecer sabores que hablen por sí solos, mientras nuestro servicio cálido y profesional asegura que te sientas como en casa.
+
+Te invitamos a explorar nuestro menú y dejarte llevar por una experiencia que celebra lo mejor de la cocina. Descubre por qué la pasión que nos distingue se siente en cada bocado.
+		</Card>
+		<Card title="Nuestra Misión">
+			Ofrecer experiencias culinarias memorables a través de cortes de carne de alta calidad, preparados con dedicación y acompañados de un servicio excepcional. Nos comprometemos a deleitar a nuestros clientes con sabores auténticos, frescura en cada ingrediente y una atención al detalle que refleja nuestra pasión por la gastronomía.
+		</Card>
+		<Card title="Nuestra Visión">
+			Ser reconocidos como un referente en cocina especializada en carnes, destacando por la excelencia en cada plato, la innovación constante y el compromiso con la satisfacción total de nuestros comensales. Aspiramos a expandir la cultura del buen comer, convirtiéndonos en el destino preferido de quienes buscan calidad, sabor y una experiencia única.
+		</Card>
+		<Card title="Nuestros Objetivos">
+			<ol>
+				<li>Garantizar la calidad constante en todos nuestros cortes e ingredientes.</li>
+
+<li>Brindar un servicio al cliente cálido y profesional que supere expectativas.</li>
+
+<li>Desarrollar un menú innovador, manteniendo el equilibrio entre tradición y creatividad.</li>
+
+<li>Fomentar un ambiente de trabajo colaborativo y de mejora continua para nuestro equipo.</li>
+
+<li>Consolidarnos como un restaurante de referencia en la ciudad por nuestra pasión culinaria y atención al detalle.</li>
+
+<li>Promover prácticas responsables y sostenibles dentro de nuestras operaciones.</li>
+			</ol>
+		</Card>
+	</div>
+</Layout>
+
+<style>
+</style>

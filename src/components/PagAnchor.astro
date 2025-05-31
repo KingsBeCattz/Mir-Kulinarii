@@ -1,0 +1,40 @@
+---
+interface Props {
+	title: string;
+	href: string;
+}
+
+const { title, href } = Astro.props;
+const { pathname } = Astro.url;
+---
+
+<>
+{pathname === Astro.props.href ? (
+  <span class="active montserrat-450 anchor">{title}</span>
+) : (
+  <a href={href} class="montserrat-300 anchor">
+    {title}
+  </a>
+)}
+</>
+
+<style>
+  a.anchor, span.anchor {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  span.anchor {
+    opacity: 1;
+  }
+
+  span.anchor:hover {
+  cursor: pointer
+  }
+
+  a.anchor:hover {
+    opacity: 1;
+  }
+</style>

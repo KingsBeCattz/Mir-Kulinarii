@@ -1,0 +1,51 @@
+---
+import Card from "./Card.astro";
+import MenuSection from "./MenuSection.astro";
+
+// 1. Definición de tipos (TypeScript) para las props del componente.
+interface MenuItem {
+	name: string;
+	description: string;
+	price: number;
+}
+
+interface _MenuSection {
+	subtitle: string;
+	items: MenuItem[];
+}
+
+interface Props {
+	items: _MenuSection[];
+}
+
+// 2. Desestructuración de Astro.props según la interfaz Props.
+const { items } = Astro.props as Props;
+---
+
+<!--
+  3. Renderizado estático de la estructura:
+     - Un contenedor principal <nav> para semántica de menú.
+     - Para cada sección, se muestra el subtitle como encabezado (h2).
+     - Dentro de cada sección, se itera sobre items para mostrar nombre, descripción y precio.
+-->
+<Card title="Nuestro Menu">
+  {items.map((section) => (
+    <MenuSection 
+      subtitle={section.subtitle}
+      items={section.items}
+    />
+  ))}
+</Card>
+
+<style>
+  /* 
+    4. Estilos básicos para asegurar legibilidad y 
+       separar visualmente secciones e ítems. 
+  */
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: sans-serif;
+  }
+</style>
